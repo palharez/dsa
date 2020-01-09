@@ -101,3 +101,72 @@ for(i := 0; i < n; i = i + 1)
   for(j := i; j < n; j = j + 1)
            ^ replaced 0 with i
 ```
+
+---
+
+**Binary Search**
+
+Suppose we have a sorted array and we want to find the index of particular value in the array, if it exists. What is the time complexity of the following algorithm?
+
+```
+low := 0
+high := n-1
+while low <= high Do
+  mid := low + (high - low) // 2
+  if array[mid] == value: return mid
+  else if array[mid] < value: low = mid + 1
+  else if array[mid] > hi = mid - 1
+
+return -1
+```
+
+Ans: O(log2(n)) = **O(log(n))**
+
+---
+
+Quadric Time
+
+```
+i := 0
+while i < n do
+  j := 0
+  while j < 3*n do
+    j := j + 1
+
+  j = 0
+  while j < 2*n do
+    j = j + 1
+
+  i = i + 1
+```
+
+f(n) = n \* (3n + 2n) = 5n²
+O(f(n)) = **O(n²)**
+
+---
+
+```
+i := 0
+while i < 3 * n do
+  j := 10
+  while j < 50 do
+    j := j + 1
+
+  j = 0
+  while j < n*n*n do
+    j = j + 2
+
+  i = i + 1
+```
+
+f(n) = 3n \* (40 + n³/2) = 3n/40 + 3n^4/2
+O(f(n)) = **O(n^4)**
+
+---
+
+Classic examples of Big-O:
+
+- Finding all subsets of set - **O(2^n)**
+- Finding all permutations of a tring = **O(n!)**
+- Sorting using mergesorte - **O(nlog(n))**
+- Inverting over all the cells in a matrix of size n by m - **O(nm)**
