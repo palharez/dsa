@@ -1,3 +1,4 @@
+"""
 # Pilhas - Stack
 
 **Pilha** ou _stack_ é um tipo especial de lista linear em que todas as operações de inserção e remoção são realizadas pela mesma extremidade chamada de **topo**, em oposição a outra extremidade, chamada de base.
@@ -20,3 +21,34 @@ A implementação de pilhas pode ser realizada através de vetor ou através de 
 - Mostrar o topo (peek);
 - Verificar se a pilha está vazia (is_empty);
 - Verificar o tamanho da pilha (size);
+
+"""
+
+class Stack: #Stack
+
+    def __init__(self):
+        self.stack = []
+        self.len_stack = 0
+
+    def push(self, e):
+        self.stack.append(e)
+        self.len_stack += 1
+
+
+    def pop(self):
+        if not self.empty():
+            self.stack.pop(self.len_stack - 1)
+            self.len_stack -= 1
+    
+    def top(self):
+        if not self.empty():
+            return self.stack[-1]
+        return None
+
+    def empty(self):
+        if self.len_stack == 0:
+            return True
+        return False
+    
+    def length(self):
+        return self.len_stack
